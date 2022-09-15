@@ -10,7 +10,7 @@ const index_2 = __importDefault(require("./Routes/index"));
 class Server {
     constructor() {
         this.api = {
-            user: '/api/user'
+            user: '/api/user',
         };
         dotenv_1.default.config();
         this.app = (0, express_1.default)();

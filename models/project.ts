@@ -1,13 +1,9 @@
-import {Model} from 'sequelize';
+import {Model,InferAttributes,InferCreationAttributes} from 'sequelize';
 
-interface IProject{
-   id:number;
-   title: string;
-   status : string
-}
+
 
 module.exports = (sequelize:any, DataTypes:any) => {
-  class Project extends Model <IProject> implements IProject {
+  class Project extends Model <InferAttributes<Project>, InferCreationAttributes<Project>>  {
       declare id : number;
      declare title:string;
      declare status:string;

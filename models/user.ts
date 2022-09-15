@@ -1,16 +1,9 @@
-import {Model} from 'sequelize';
+import {Model,InferAttributes,InferCreationAttributes,CreationOptional} from 'sequelize';
 
-interface IUser {
-  id: number;
-  firstName : string;
-  lastName : string;
-  age : number;
-  email : string;
-  password: string;
-}
+
 
 module.exports = (sequelize:any, DataTypes:any) => {
-  class User extends Model <IUser> implements IUser{
+  class User extends Model <InferAttributes<User>,InferCreationAttributes<User> >{
     
      declare id :number;
      declare firstName: string;
